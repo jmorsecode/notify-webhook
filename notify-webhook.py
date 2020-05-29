@@ -6,6 +6,7 @@ import subprocess
 import sys
 import hmac
 import hashlib
+import uuid
 from datetime import datetime
 from collections import OrderedDict
 
@@ -367,6 +368,7 @@ def post(url, data):
     headers = {
         'Content-Type': POST_CONTENTTYPE,
         'X-GitHub-Event': 'push',
+        'X-GitHub-Delivery': uuid.uuid4().hex,
     }
     postdata = post_encode_data(POST_CONTENTTYPE, data)
 
