@@ -337,7 +337,7 @@ def make_json(old, new, ref):
     if base_ref:
         data['base_ref'] = base_ref
 
-    return json.dumps(data)
+    return json.dumps(data, indent=2)
 
 
 def post_encode_data(contenttype, rawdata):
